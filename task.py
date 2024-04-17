@@ -44,10 +44,10 @@ def main(args):
     cap = cv2.VideoCapture(args['input'])
 
     if (cap.isOpened() == False):
-      warnings.warn('Error while trying to read video. Please check path again')
+      warnings.warn('Error with video path')
 
 
-    save_name = str(pathlib.Path(args['input'])).split(os.path.sep)[-1].split('.')[0]
+    save_name = str(pathlib.Path(args['input'])).split(os.path.sep)[-1].split('.')[0] + '_detected'
     out = cv2.VideoWriter(f"inference/output/{save_name}.mp4",
                           cv2.VideoWriter_fourcc(*'mp4v'), 30,
                           RESIZE_TO)
