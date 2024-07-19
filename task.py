@@ -89,6 +89,7 @@ def main(args):
             break
 
     cap.release()
+    out.release()
 
 
 if __name__ == '__main__':
